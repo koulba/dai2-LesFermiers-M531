@@ -10,3 +10,5 @@ faire un git add du fichier qu'on veut ajouter
 3.faire un checkout du main 
 4.faire un merge de sa branche dans le main
 5.faire un push.
+
+Merci Valentin <3 
