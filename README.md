@@ -15,6 +15,11 @@ Pour pull uniquement le main
 1. git checkout main 
 2. git pull 
 
+Pour merge depuis le main vers ma branche 
+1. git checkout ma branche 
+2. git merge main 
+
+
 Merci Valentin <3 
 
 Christophe écoute 
