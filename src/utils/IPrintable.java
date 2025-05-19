@@ -7,6 +7,8 @@ package utils;
  * @see Array2Dprinter
  */
 public interface IPrintable {
+    String getPrintSymbol();
+
     /**
      * @return The string representation of the element
      */

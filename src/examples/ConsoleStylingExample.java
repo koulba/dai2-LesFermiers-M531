@@ -10,7 +10,7 @@ public class ConsoleStylingExample {
         System.out.println("Console Styling Example");
         System.out.println("====================================");
         // Basic style usage
-        String styled = StringStyling.StyleString("Hello, World! Out of the blue", Style.BOLD, Color.BLUE);
+        String styled = StringStyling.StyleString("Welcome to the Text Adventure Game!", Style.BOLD, Color.BLUE);
         System.out.println(styled);
 
         // Using bright styling with background
