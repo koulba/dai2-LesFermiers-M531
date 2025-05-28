@@ -1,39 +1,49 @@
-package main;
 
-import core.Location;
+package core;
 
-public class WorldMap {
-    private Location[][] locations;
-    private int playerRow, playerCol;
+import java.util.ArrayList;
+import java.util.List;
 
-    public WorldMap(int rows, int cols) {
-        locations = new Location[rows][cols];
+public class World {
+    private static final World instance = new World(4, 3);
+
+    private Location[][] grid;
+    private List<Location> locations;
+
+    private World(int rows, int columns) {
+        grid = new Location[rows][columns];
+        locations = new ArrayList<>();
     }
 
-    public void addLocation(Location loc, int row, int col) {
-        locations[row][col] = loc;
+    public Location getLocation(int row, int col) {
+        if (isValidPosition(row, col)) return grid[row][col];
+        return null;
     }
 
-    public Location getLocationAt(int row, int col) {
-        if (row < 0 || row >= locations.length || col < 0 || col >= locations[0].length)
-            return null;
-        return locations[row][col];
+    public Location getLocationByName(String locationName) {
+        for (Location location : locations) {
+            if (location.getName().equals(locationName)) {
+                return location;
+            }
+        }
+        return null;
     }
 
-    public void setPlayerPosition(int row, int col) {
-        this.playerRow = row;
-        this.playerCol = col;
+    public void addLocation(Location location, int row, int col) {
+        if (isValidPosition(row, col)) {
+            grid[row][col] = location;
+            locations.add(location);
+            location.setRow(row);
+            location.setCol(col);
+        }
     }
 
-    public void movePlayer(int row, int col) {
-        this.playerRow = row;
-        this.playerCol = col;
+    private boolean isValidPosition(int row, int col) {
+        int numRows = grid.length;
+        int numCols = grid[0].length;
+        return row >= 0 && row < numRows && col >= 0 && col < numCols;
     }
 
-    public int getPlayerRow() { return playerRow; }
-    public int getPlayerCol() { return playerCol; }
-
-    public Location[][] getLocations() {
-        return locations;
-    }
+    public Location[][] getMap() {return grid;}
+    public static World getInstance() {return instance;}
 }
