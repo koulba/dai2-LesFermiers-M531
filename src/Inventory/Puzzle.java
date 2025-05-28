@@ -1,5 +1,6 @@
 package Inventory;
 
+
 import core.Location;
 
 public class Puzzle extends Item {
@@ -14,4 +15,5 @@ public class Puzzle extends Item {
 
     public String getAnswer() {return ANSWER;}
     public String getReward() {return REWARD;}
+
 }

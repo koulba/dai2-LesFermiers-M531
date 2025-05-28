@@ -1,5 +1,6 @@
 package Inventory;
 
+
 import core.Location;
 
 public class Item {
@@ -19,4 +20,5 @@ public class Item {
     public String getDescription() {return description;}
     public ItemType getType() {return type;}
     public Location getConcernedLocation() {return concernedLocation;}
+
 }

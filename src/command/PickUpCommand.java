@@ -1,5 +1,6 @@
 package command;
 
+
 import core.Location;
 import core.Player;
 import core.World;

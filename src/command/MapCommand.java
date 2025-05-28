@@ -1,5 +1,6 @@
 package command;
 
+
 import core.Location;
 import core.Player;
 
@@ -93,5 +94,6 @@ public class MapCommand implements Command {
         }
 
         return maxLength;
+
     }
 }

@@ -1,5 +1,6 @@
 package Inventory;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,4 +33,5 @@ public class Inventory {
     public boolean containsItem(Item item) {
         return items.contains(item);
     }
+
 }

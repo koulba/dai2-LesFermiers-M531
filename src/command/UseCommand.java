@@ -1,5 +1,6 @@
 package command;
 
+
 import java.util.Scanner;
 
 import Inventory.Inventory;
@@ -82,4 +83,5 @@ public class UseCommand implements Command {
             System.out.println("You do not own this item !");
         }
     }
+
 }

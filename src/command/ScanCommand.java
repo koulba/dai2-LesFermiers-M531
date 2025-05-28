@@ -1,5 +1,6 @@
 package command;
 
+
 import core.Location;
 import core.Player;
 import Inventory.Item;
@@ -50,4 +51,5 @@ public class ScanCommand implements Command {
             }
         } else System.out.println("You don't need to add arguments to this command.");
     }
+
 }
