@@ -1,38 +1,59 @@
 package core;
 
-import utils.IPrintable;
+import java.util.ArrayList;
 
-public class Location implements IPrintable {
-    private final String name;
-    private final String description;
+import Inventory.Item;
+import Inventory.ItemType;
+
+public class Location {
+    private String name;
+    private String description;
+    private int row;
+    private int col;
     private boolean locked;
+    private ArrayList<Item> items;
 
-    public Location(String name, String desc, boolean locked) {
+    public Location(String name, String description, boolean isLocked) {
         this.name = name;
-        this.description = desc;
-        this.locked = locked;
+        this.description = description;
+        this.locked = isLocked;
+        this.items = new ArrayList<Item>();
     }
 
-    public boolean isLocked() {
-        return locked;
+    public String getName() {return name;}
+    public String getDescription() {return description;}
+    public int getRow() {return row;}
+    public int getCol() {return col;}
+
+    public boolean isLocked() {return locked;}
+
+    public void setLocked(boolean locked) {this.locked = locked;}
+    public void setRow(int row) {this.row = row;}
+    public void setCol(int col) {this.col = col;}
+
+    public void addItem(Item item) {
+        items.add(item);
     }
 
-    public String inspect() {
-        return "You are in: " + name + ". " + description;
+    public void removeItem(Item item) {
+        items.remove(item);
     }
 
-    @Override
-    public String getPrintSymbol() {
-        return locked ? "[X]" : "[ ]";
+    public Item getItemByName(String itemName) {
+        for (Item item : this.items) {
+            if (item.getName().equalsIgnoreCase(itemName)) {
+                return item;
+            }
+        }
+        return null;
     }
 
-    @Override
-    public boolean isGrayedOut() {
-        return locked;
-    }
+    public ArrayList<Item> getItems() {return items;}
 
-    @Override
-    public String getPrintableString() {
-        return name;
+    public boolean containsItem(ItemType type) {
+        for (int i = 0; i < items.size(); ++i) {
+            if (items.get(i).getType() == ItemType.PUZZLE) return true;
+        }
+        return false;
     }
 }

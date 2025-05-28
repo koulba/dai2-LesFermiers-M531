@@ -1,23 +1,25 @@
 package command;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class CommandRegistry {
-    private final HashMap<String, Command> commands = new HashMap<>();
+    private Map<String, Command> commands;
 
-    public void register(String name, Command command) {
-        commands.put(name, command);
+    public CommandRegistry() {
+        commands = new HashMap<>();
     }
 
-    public void execute(String input) {
-        String[] parts = input.trim().split(" ");
-        String name = parts[0];
-        String[] args = java.util.Arrays.copyOfRange(parts, 1, parts.length);
-        Command command = commands.get(name);
-        if (command != null) {
-            command.execute(args);
-        } else {
-            System.out.println("Unknown command.");
-        }
+    public void registerCommand(String commandName, Command command) {
+        commands.put(commandName, command);
+    }
+
+    public Command getCommand(String commandName) {
+        return commands.get(commandName);
+    }
+
+    public String[] getCommandNames() {
+        String[] allCommands = new String[commands.size()];
+        return commands.keySet().toArray(allCommands);
     }
 }

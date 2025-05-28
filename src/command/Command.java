@@ -1,5 +1,8 @@
 package command;
 
 public interface Command {
-    void execute(String[] args);
+    String getDescription();
+    String getUsage();
+    boolean hasValidArgument(String arg);
+    void execute(String arg);
 }
