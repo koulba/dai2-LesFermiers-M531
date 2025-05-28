@@ -1,5 +1,6 @@
 package main;
 
+import core.Game;
 import utils.Color;
 import utils.StringStyling;
 import utils.Style;

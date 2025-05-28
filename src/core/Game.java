@@ -1,7 +1,8 @@
-package main;
+package core;
 
-import core.Location;
 import command.*;
+import main.Player;
+import main.WorldMap;
 import utils.Color;
 import utils.StringStyling;
 import utils.Style;

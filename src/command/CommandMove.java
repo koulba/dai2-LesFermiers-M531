@@ -1,6 +1,5 @@
 package command;
 
-import core.Direction;
 import core.Location;
 import main.WorldMap;
 
