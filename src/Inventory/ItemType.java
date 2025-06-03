@@ -4,5 +4,6 @@ public enum ItemType {
     KEY,
     PUZZLE,
     SWORD,
+    MAGIC,
 
 }

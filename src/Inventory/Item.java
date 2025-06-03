@@ -16,9 +16,8 @@ public class Item {
         this.concernedLocation = concernedLocation;
     }
 
-    public String getName() {return name;}
-    public String getDescription() {return description;}
-    public ItemType getType() {return type;}
-    public Location getConcernedLocation() {return concernedLocation;}
-
+    public String getName() { return name; }
+    public String getDescription() { return description; }
+    public ItemType getType() { return type; }
+    public Location getConcernedLocation() { return concernedLocation; }
 }

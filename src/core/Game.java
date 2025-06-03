@@ -1,19 +1,16 @@
 
 package core;
 
-import command.CommandRegistry;
-import command.MoveCommand;
-import command.HelpCommand;
-import command.InventoryCommand;
-import command.MapCommand;
-import command.PickUpCommand;
-import command.ScanCommand;
-import command.UseCommand;
+import command.*;
 import Inventory.Item;
 import Inventory.ItemType;
 import Inventory.Puzzle;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Game {
+    private List<String> commandHistory = new ArrayList<>();
     private static final Game instance = new Game();
     private static CommandRegistry commandRegistry;
     private static Location[][] map;
@@ -78,12 +75,54 @@ public class Game {
                 world.getLocationByName("Ancestral's Dragon")
         ));
 
+        world.getLocationByName("Nexus").addItem(
+                new Item("Teleport Crystal", "A mysterious crystal that allows you to teleport between visited locations.", ItemType.MAGIC, world.getLocationByName("Mystery Inc. Headquarters"))
+        );
+
         world.getLocationByName("Baron Nashor").addItem(new Puzzle(
                 "What haunts the manor named after Baron Nashor?",
                 "Void",
                 "Another hint is awaiting you at "+YELLOW_BOLD+"Heralt"+RESET_COLOR+". You might want to check it.",
                 world.getLocationByName("Baron Nashor")
         ));
+    }
+
+    public void executeCommand(String inputLine) {
+        commandHistory.add(inputLine); // sauvegarde la commande
+
+        String[] parts = inputLine.trim().split(" ");
+        String commandWord = parts[0];
+        String arg = inputLine.substring(commandWord.length()).trim();
+
+        if (commandWord.equalsIgnoreCase("save")) {
+            SaveManager.saveCommands(commandHistory);
+            System.out.println("Game saved.");
+            return;
+        }
+
+        Command command = commandRegistry.getCommand(commandWord);
+        if (command != null) {
+            command.execute(arg);
+        } else {
+            System.out.println("Invalid command: " + commandWord + "\nType 'help' for available commands");
+        }
+
+        updateTeleportCommand(); // vérifie si le cristal est dans l'inventaire
+    }
+
+    private void updateTeleportCommand() {
+        boolean hasCrystal = player.getInventory().getItems().stream()
+                .anyMatch(item -> item.getName().equalsIgnoreCase("Teleport Crystal"));
+
+        if (hasCrystal) {
+            if (commandRegistry.getCommand("teleport") == null) {
+                commandRegistry.registerCommand("teleport", new TeleportCommand(player, world));
+            }
+        } else {
+            if (commandRegistry.getCommand("teleport") != null) {
+                commandRegistry.unregisterCommand("teleport");
+            }
+        }
     }
 
     private void createCommands() {

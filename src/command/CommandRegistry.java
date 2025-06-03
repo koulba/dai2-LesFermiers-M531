@@ -11,11 +11,18 @@ public class CommandRegistry {
     }
 
     public void registerCommand(String commandName, Command command) {
-        commands.put(commandName, command);
+        commands.put(commandName.toLowerCase(), command);
     }
 
     public Command getCommand(String commandName) {
-        return commands.get(commandName);
+        if (commandName == null) return null;
+        return commands.get(commandName.toLowerCase());
+    }
+
+    public void unregisterCommand(String commandName) {
+        if (commandName != null) {
+            commands.remove(commandName.toLowerCase());
+        }
     }
 
     public String[] getCommandNames() {
