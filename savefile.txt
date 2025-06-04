@@ -1,4 +1,0 @@
-move east
-move east
-map
-save
