@@ -17,7 +17,6 @@ public class Player {
         this.col = col;
         this.inventory = new Inventory();
         this.visitedLocations = new HashSet<>();
-        // On considère que le joueur commence par visiter sa position initiale
         visitedLocations.add(World.getInstance().getLocation(row, col));
     }
 

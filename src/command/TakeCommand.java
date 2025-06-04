@@ -20,12 +20,12 @@ public class TakeCommand implements Command {
 
     @Override
     public String getDescription() {
-        return "Pick up an item at the current location";
+        return "take an item at the current location";
     }
 
     @Override
     public String getUsage() {
-        return "pickup <item>";
+        return "take <item>";
     }
 
     @Override
@@ -40,7 +40,7 @@ public class TakeCommand implements Command {
         if (item != null) {
             inventory.addItem(item);
             currentLocation.removeItem(item);
-            System.out.println("You picked up the item: "+"\033[1;38;5;208m"+item.getName()+"\033[0m"+"\033[1;38;5;208m"+" - "+item.getDescription()+"\033[0m");
+            System.out.println("You took the item: "+"\033[1;38;5;208m"+item.getName()+"\033[0m"+"\033[1;38;5;208m"+" - "+item.getDescription()+"\033[0m");
         } else {
             System.out.println("There is no item named '"+arg+"' at the current location");
         }
