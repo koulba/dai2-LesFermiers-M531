@@ -1,6 +1,7 @@
 package core;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import Inventory.Item;
 import Inventory.ItemType;
@@ -55,5 +56,19 @@ public class Location {
             if (items.get(i).getType() == ItemType.PUZZLE) return true;
         }
         return false;
+    }
+
+    // Ajout de equals() et hashCode() basés sur les coordonnées row et col
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Location)) return false;
+        Location other = (Location) o;
+        return this.row == other.row && this.col == other.col;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(row, col);
     }
 }

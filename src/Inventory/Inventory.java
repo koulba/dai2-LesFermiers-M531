@@ -34,4 +34,12 @@ public class Inventory {
         return items.contains(item);
     }
 
+    public boolean hasItem(String itemName) {
+        for (Item item : items) {
+            if (item.getName().equalsIgnoreCase(itemName)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
