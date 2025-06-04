@@ -7,11 +7,11 @@ import Inventory.Item;
 
 import java.util.List;
 
-public class ScanCommand implements Command {
+public class LookCommand implements Command {
     private Location[][] map;
     private Player player;
 
-    public ScanCommand(Location[][] map, Player player) {
+    public LookCommand(Location[][] map, Player player) {
         this.map = map;
         this.player = player;
     }

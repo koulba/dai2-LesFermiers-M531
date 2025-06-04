@@ -131,10 +131,10 @@ public class Game {
         commandRegistry.registerCommand("help", new HelpCommand(commandRegistry));
         commandRegistry.registerCommand("move", new MoveCommand(map, player));
         commandRegistry.registerCommand("map", new MapCommand(map, player));
-        commandRegistry.registerCommand("pickup", new PickUpCommand(player.getInventory(), player, world));
+        commandRegistry.registerCommand("take", new TakeCommand(player.getInventory(), player, world));
         commandRegistry.registerCommand("use", new UseCommand(player.getInventory()));
         commandRegistry.registerCommand("inventory", new InventoryCommand(player.getInventory()));
-        commandRegistry.registerCommand("scan", new ScanCommand(map, player));
+        commandRegistry.registerCommand("look", new LookCommand(map, player));
     }
 
     private void initMessage() {

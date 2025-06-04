@@ -7,12 +7,12 @@ import core.World;
 import Inventory.Inventory;
 import Inventory.Item;
 
-public class PickUpCommand implements Command {
+public class TakeCommand implements Command {
     private Inventory inventory;
     private Player player;
     private World world;
 
-    public PickUpCommand(Inventory inventory, Player player, World world) {
+    public TakeCommand(Inventory inventory, Player player, World world) {
         this.inventory = inventory;
         this.player = player;
         this.world = world;
