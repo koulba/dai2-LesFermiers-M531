@@ -18,17 +18,17 @@ public class LookCommand implements Command {
 
     @Override
     public String getDescription() {
-        return "Scan your current location for items";
+        return "Look your current location for items";
     }
 
     @Override
     public String getUsage() {
-        return "scan";
+        return "look";
     }
 
     @Override
     public boolean hasValidArgument(String arg) {
-        return arg.isEmpty(); // The "scan" command doesn't require any argument
+        return arg.isEmpty(); // The "look" command doesn't require any argument
     }
 
     @Override
