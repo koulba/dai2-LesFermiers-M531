@@ -1,25 +1,27 @@
-# dai2
-Game done at HEIG-VD - Dai2
-Coucou je suis la petite branche 
-J'aime le veau
+# Game done at HEIG-VD - Dai2
+# DAI2 – Groupe Les Fermiers
+Liliana Kolmakova, Thierry Koulbanis, Christophe Cunha, Valentin Ferrini
 
-Marche à suivre pour transférer les modifications de sa branche vers le main
-faire un git add du fichier qu'on veut ajouter
-1.faire un commit dans sa branche 
-2.faire un push dans sa branche 
-3.faire un checkout du main 
-4.faire un merge de sa branche dans le main
-5.faire un push.
+# Bug connus
+Il n’y a aucun bug connu.
 
-Pour pull uniquement le main 
-1. git checkout main 
-2. git pull 
+# Indications nécessaires pour tester notre système d'énigmes
+**Ancestral's Dragon**
+**Coordonnées sur la map :** (2,0)  
+**Énigme posée :** What haunts Ancestral's Dragon?  
+**Réponse attendue :** Ghosts  
+**Indice fourni :** A strange item seems to have been lost near the Nexus... but which one ? 
+  
+**Baron Nashor**  
+**Coordonnées sur la map :** (1,1)  
+**Énigme posée :** What haunts the creature named after Baron Nashor?  
+**Réponse attendue :** Void  
+**Indice fourni :** Another hint is awaiting you at Heralt. You might want to check it.  
 
-Pour merge depuis le main vers ma branche 
-1. git checkout ma branche 
-2. git merge main 
-
-
-Merci Valentin <3 
-
-Christophe écoute 
+# Comment obtenir le crystal (bonus)
+**Nom :** Teleport Crystal  
+**Comment le trouver :** Indice fourni par le Puzzle du Ancestral’s Dragon  
+**Lieu :** Nexus (coordonnées (0,0) — point de départ)  
+**Type :** MAGIC  
+**Effet :** Permet de téléporter le joueur vers des lieux déjà visités  
+**Commande débloquée :** teleport (activée automatiquement si le crystal est dans l'inventaire)  
