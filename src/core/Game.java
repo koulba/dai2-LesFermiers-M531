@@ -71,7 +71,7 @@ public class Game {
         world.getLocationByName("Ancestral's Dragon").addItem(new Puzzle(
                 "What haunts Ancestral's Dragon?",
                 "Ghosts",
-                "A strange "+PURPLE_BOLD+"item"+RESET_COLOR+" seems to have been lost near a Manor... but which one ?",
+                "A strange "+PURPLE_BOLD+"item"+RESET_COLOR+" seems to have been lost near the Nexus... but which one ?",
                 world.getLocationByName("Ancestral's Dragon")
         ));
 
@@ -80,7 +80,7 @@ public class Game {
         );
 
         world.getLocationByName("Baron Nashor").addItem(new Puzzle(
-                "What haunts the manor named after Baron Nashor?",
+                "What haunts the creature named after Baron Nashor?",
                 "Void",
                 "Another hint is awaiting you at "+YELLOW_BOLD+"Heralt"+RESET_COLOR+". You might want to check it.",
                 world.getLocationByName("Baron Nashor")

@@ -25,7 +25,7 @@ public class MapCommand implements Command {
 
     @Override
     public boolean hasValidArgument(String arg) {
-        return arg.isEmpty(); // The "map" command doesn't require any argument
+        return arg.isEmpty();
     }
 
     @Override
